@@ -19,7 +19,7 @@ clone("fx-bizday")
 
 ## Browse in GitHub
 
-Start here: [fx-bizday/Introduction.ipynb](fx-bizday/Introduction.ipynb)
+Start here: [fx_bizday/Introduction.ipynb](fx_bizday/Introduction.ipynb)
 
 ***
 
