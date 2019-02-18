@@ -16,7 +16,7 @@
 # Update historical database, wait for it to finish, then trade fx-bizday each weekday at 3 AM, 11 AM, and 4 PM. This command "paper trades" 
 # fx-bizday by logging orders to flightlog; to live or paper trade with IB, send orders to blotter instead:
 #     ... quantrocket moonshot trade 'fx-bizday' | quantrocket blotter order -f -
-0 3,11,16 * * mon-fri quantrocket history collect 'fiber-1h' && quantrocket history wait 'fiber-1h' && quantrocket moonshot trade 'fx-bizday' | quantrocket flightlog log -n 'quantrocket.moonshot'
+0 3,11,16 * * mon-fri sleep 3 && quantrocket history collect 'fiber-1h' --priority && quantrocket history wait 'fiber-1h' && quantrocket moonshot trade 'fx-bizday' | quantrocket flightlog log -n 'quantrocket.moonshot'
 
 # stop IB Gateway at end of day
 0 18 * * mon-fri quantrocket launchpad stop
