@@ -14,14 +14,14 @@
 
 import pandas as pd
 from moonshot import Moonshot
-from moonshot.commission import SpotForexCommission
+from moonshot.commission import SpotFXCommission
 
 class FxBizday(Moonshot):
 
     CODE = "fx-bizday"
     DB = "fiber-1h"
     DB_FIELDS = ["Close"]
-    COMMISSION_CLASS = SpotForexCommission
+    COMMISSION_CLASS = SpotFXCommission
     SLIPPAGE_BPS = 0.1
     BENCHMARK = 12087792
     SELL_EUR_START = "03:00:00"

@@ -1,6 +1,6 @@
 # fx-bizday
 
-Intraday forex strategy that exploits the tendency of currencies to depreciate during local business hours and appreciate during foreign business hours. Uses EUR.USD with hourly data from Interactive Brokers. Compatibile with sample data.
+Intraday FX strategy that exploits the tendency of currencies to depreciate during local business hours and appreciate during foreign business hours. Uses EUR.USD with hourly data from Interactive Brokers. Compatibile with sample data.
 
 ## Clone in QuantRocket
 
