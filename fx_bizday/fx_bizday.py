@@ -1,4 +1,4 @@
-# Copyright 2019 QuantRocket LLC - All Rights Reserved
+# Copyright 2020 QuantRocket LLC - All Rights Reserved
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class FxBizday(Moonshot):
     DB_FIELDS = ["Close"]
     COMMISSION_CLASS = SpotFXCommission
     SLIPPAGE_BPS = 0.1
-    BENCHMARK = 12087792
+    BENCHMARK = "FXEURUSD"
     SELL_EUR_START = "03:00:00"
     SELL_EUR_END = "11:00:00"
     BUY_EUR_START = "11:00:00"
@@ -51,7 +51,7 @@ class FxBizday(Moonshot):
         signals = minus_ones.where(sell_eur, ones.where(buy_eur, 0))
 
         # Only on weekdays
-        are_weekdays = closes.index.get_level_values("Date").weekday_name.isin([
+        are_weekdays = closes.index.get_level_values("Date").day_name().isin([
             "Monday",
             "Tuesday",
             "Wednesday",
