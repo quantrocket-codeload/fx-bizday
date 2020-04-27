@@ -23,6 +23,7 @@ class FxBizday(Moonshot):
     DB_FIELDS = ["Close"]
     COMMISSION_CLASS = SpotFXCommission
     SLIPPAGE_BPS = 0.1
+    SIDS = "FXEURUSD"
     BENCHMARK = "FXEURUSD"
     SELL_EUR_START = "03:00:00"
     SELL_EUR_END = "11:00:00"
