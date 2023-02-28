@@ -30,7 +30,7 @@ class FxBizday(Moonshot):
     BUY_EUR_START = "11:00:00"
     BUY_EUR_END = "16:00:00"
 
-    def prices_to_signals(self, prices):
+    def prices_to_signals(self, prices: pd.DataFrame):
 
         closes = prices.loc["Close"]
 
@@ -64,22 +64,22 @@ class FxBizday(Moonshot):
 
         return signals
 
-    def signals_to_target_weights(self, signals, prices):
+    def signals_to_target_weights(self, signals: pd.DataFrame, prices: pd.DataFrame):
         # Assign 100% of capital to signal
         weights = signals.copy()
         return weights
 
-    def target_weights_to_positions(self, weights, prices):
+    def target_weights_to_positions(self, weights: pd.DataFrame, prices: pd.DataFrame):
         # Enter the position the same period
         positions = weights.copy()
         return positions
 
-    def positions_to_gross_returns(self, positions, prices):
+    def positions_to_gross_returns(self, positions: pd.DataFrame, prices: pd.DataFrame):
         closes = prices.loc["Close"]
         gross_returns = closes.pct_change() * positions.shift()
         return gross_returns
 
-    def order_stubs_to_orders(self, orders, prices):
+    def order_stubs_to_orders(self, orders: pd.DataFrame, prices: pd.DataFrame):
         orders["Exchange"] = "IDEALPRO"
         orders["OrderType"] = "MKT"
         orders["Tif"] = "DAY"
